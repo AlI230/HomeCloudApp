@@ -17,17 +17,12 @@ const NavigationDrawerStructure = (props) => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <View style={{ flexDirection: 'row', justifyContent: 'space-between', backgroundColor: isDarkMode ? "#2b2b2b" : "#f7f5f5", height: 45, paddingTop: 10  }}>
+    <View style={{backgroundColor: isDarkMode ? "#2b2b2b" : "#f7f5f5"}}>
       <TouchableOpacity onPress={toggleDrawer}>
-        {/*Donute Button Image */}
         <View style={{marginLeft: 10}}>
           <Feather name={'menu'} size={25} color={ isDarkMode ? 'white' : 'black'} />
         </View>
       </TouchableOpacity>
-      <View style={{flexDirection: 'row'}}>
-        <Feather name="search" size={24} color={isDarkMode ? "white" : "black"} />
-        <Feather name="more-vertical" size={24} color={isDarkMode ? "white" : "black"} />
-      </View>
     </View>
   );
 };
@@ -41,7 +36,7 @@ function FileScreenStack({ navigation, route }) {
         component={HomePage}
         options={({route}) => ({
           title: '', //Set Header Title
-          header: () => (
+          headerLeft: () => (
             <NavigationDrawerStructure navigationProps={navigation} />
           ),
           headerStyle: {

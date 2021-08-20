@@ -37,7 +37,7 @@ function FriendScreenStack({ navigation }) {
             component={FriendsPage}
             options={{
             title: '', //Set Header Title
-            header: () => (
+            headerLeft: () => (
                 <NavigationDrawerStructure navigationProps={navigation} />
             ),
             headerStyle: {

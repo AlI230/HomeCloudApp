@@ -15,7 +15,7 @@ const StandAloneScreenStack = () => {
           name="ProfilePage"
           component={ProfilePage}
           options={{
-            title: '', //Set Header Title
+            title: 'Profile Page', //Set Header Title
             headerStyle: {
               backgroundColor: isDarkMode ? "#2b2b2b" : "#f7f5f5",
               shadowRadius: 0,

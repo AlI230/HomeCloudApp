@@ -37,11 +37,14 @@ const ProfilePage = ({ navigation }) => {
           <ScrollView style={{ width: '100%', padding: 15}}>
             <View style={{
               alignItems: 'center', 
-              backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 0.8)', 
+              backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 1)', 
               width: "100%", 
               borderRadius: 10, 
               padding: 20,
             }}>
+              <TouchableOpacity style={{alignSelf: 'flex-end', marginBottom: -15}} >
+                <Feather name='edit-2' size={16} color={isDarkMode ? "white": "black"} />
+              </TouchableOpacity>
               <Feather name="user" size={45} color={isDarkMode ? "white": "black"} />
               <View style={{
                 marginTop: 20,
@@ -56,22 +59,113 @@ const ProfilePage = ({ navigation }) => {
             <View style={{
               marginTop: 20,
               alignItems: 'center', 
-              backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 0.8)', 
+              backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 1)', 
               width: "100%", 
               borderRadius: 10, 
-              padding: 10,
+              padding: 20,
+              justifyContent: 'space-between',
             }}>
-              <Text style={isDarkMode ? styles.textStyleDark : styles.textStyleLight}>Stats about files and space</Text>
-            </View>
-            <View style={{
-              marginTop: 20,
-              alignItems: 'center', 
-              backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 0.8)', 
-              width: "100%", 
-              borderRadius: 10, 
-              padding: 10,
-            }}>
-              <Text style={isDarkMode ? styles.textStyleDark : styles.textStyleLight}>Stats about Friends and actions</Text>
+              <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                borderColor: "#AAC5F5",
+                width: "100%",
+              }}>
+                <View style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}>
+                  <View style={{backgroundColor: isDarkMode ? "rgba(170, 197, 245, 0.65)" : "#AAC5F5", paddingHorizontal: 8, paddingVertical: 3, borderRadius: 9999}}>
+                    <Text style={{color: isDarkMode ? "white" : "black", fontSize: 14}}>Available Space</Text>
+                  </View>
+                  <View>
+                    <Text style={{color: isDarkMode ? "white" : "black", fontSize: 14}}>2.8GB / 25GB</Text>
+                  </View>
+                </View>
+                <View style={{
+                  marginTop: 10,
+                  height: 8,
+                  borderRadius: 9999,
+                  backgroundColor: "#AAC5F5"
+                }}>
+                  <View style={{
+                    width: "80%",
+                    flex: 1,
+                    flexDirection: "column",
+                    whiteSpace: "nowrap",
+                    justifyContent: "center",
+                    backgroundColor: "#6495ED",
+                    borderRadius: 9999,
+                  }}></View>
+                </View>
+              </View>
+              <View
+                style={{
+                  width: "100%",
+                  marginTop: 25,
+                  borderBottomColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(112, 112, 112, 0.50)',
+                  borderBottomWidth: 2,
+                }}
+              />
+              <View style={{
+                marginTop: 25,
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "space-between",
+                width: "100%",
+              }}>
+                  <View style={{height: 100, width: 60, alignItems: 'center', justifyContent: "flex-end"}}>
+                    <Text style={isDarkMode ? styles.textStyleDark : styles.textStyleLight}>Folders</Text>
+                    <View style={{
+                      marginTop: 5,
+                      flexDirection: "row",
+                      justifyContent: "center",
+                      alignContent: "flex-end",
+                      width: "100%",
+                      height: "40%",
+                      backgroundColor: "#6495ED",
+                      borderRadius: 5,
+                      padding: 5,
+                    }}>
+                      <Text style={{color: isDarkMode ? "white" : "black"}}>5</Text>
+                    </View>
+                  </View>
+                  <View style={{height: 100, width: 60, alignItems: 'center', justifyContent: "flex-end"}}>
+                    <Text style={isDarkMode ? styles.textStyleDark : styles.textStyleLight}>Files</Text>
+                    <View style={{
+                      marginTop: 5,
+                      flexDirection: "row",
+                      justifyContent: "center",
+                      alignContent: "flex-end",
+                      width: "100%",
+                      height: "80%",
+                      backgroundColor: "#6495ED",
+                      borderRadius: 5,
+                      padding: 5,
+                    }}>
+                      <Text style={{color: isDarkMode ? "white" : "black"}}>15</Text>
+                    </View>
+                  </View>
+                  <View style={{height: 100, width: 60, alignItems: 'center', justifyContent: "flex-end"}}>
+                    <Text style={isDarkMode ? styles.textStyleDark : styles.textStyleLight}>Folders</Text>
+                    <View style={{
+                      marginTop: 5,
+                      flexDirection: "row",
+                      justifyContent: "center",
+                      alignContent: "flex-end",
+                      width: "100%",
+                      height: "30%",
+                      backgroundColor: "#6495ED",
+                      borderRadius: 5,
+                      padding: 5,
+                    }}>
+                      <Text style={{color: isDarkMode ? "white" : "black"}}>3</Text>
+                    </View>
+                  </View>
+                  
+              </View>
+              {/* <Text style={isDarkMode ? styles.textStyleDark : styles.textStyleLight}>Stats about files and space</Text> */}
             </View>
           </ScrollView>
         </View>

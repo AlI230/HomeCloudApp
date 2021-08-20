@@ -9,9 +9,7 @@
  import React, {Fragment} from 'react';
  import {
    FlatList,
-   SafeAreaView,
-   ScrollView,
-   StatusBar,
+   TextInput,
    StyleSheet,
    Text,
    TouchableOpacity,
@@ -55,9 +53,55 @@
  const ChatsPage = ({navigation}) => {
    const isDarkMode = useColorScheme() === 'dark';
  
-   const backgroundStyle = {
-     backgroundColor: isDarkMode ? "#2b2b2b" : "#f7f5f5",
-   };
+   const NavigationDrawerStructureRight = (props) => {
+    const isDarkMode = useColorScheme() === 'dark';
+    const [isSearchMode, setIsSearchMode] = React.useState(false);
+    const [searchInput, setSearchInput] = React.useState("");
+
+   return (
+     <View style={{paddingRight: 10, flexDirection: 'row', justifyContent: 'center', alignContent: 'center'}}>
+       {isSearchMode ? (
+         <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+           <TextInput
+             style={{
+                 backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 1)',
+                 padding: 10,
+                 borderRadius: 10,
+                 color: isDarkMode ? 'white' : 'black',
+                 fontSize: 14,
+                 width: 200,
+                 marginRight: 5
+             }}
+             onChangeText={setSearchInput}
+             value={searchInput}
+             placeholder="Type here..."
+           />
+           <TouchableOpacity onPress={() => setIsSearchMode(false)}>
+             <Feather name="x" size={24} color={isDarkMode ? "white" : "black"}/>
+           </TouchableOpacity>
+         </View>
+       ) : (
+         <>
+           <TouchableOpacity onPress={() => setIsSearchMode(true)}>
+             <Feather name="search" size={24} color={isDarkMode ? "white" : "black"}/>
+           </TouchableOpacity>
+           <TouchableOpacity>
+             <Feather name="more-vertical" size={24} color={isDarkMode ? "white" : "black"}/>
+           </TouchableOpacity>
+         </>
+       )}
+     </View>
+   )
+
+  };
+
+ React.useLayoutEffect(() => {
+   navigation.setOptions({
+       headerRight: () => (
+           <NavigationDrawerStructureRight navigationProps={navigation} />
+       ),
+   });
+ }, [navigation]);
  
    const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => navigation.navigate('ChatPage', {user: {

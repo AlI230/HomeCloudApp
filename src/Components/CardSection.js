@@ -13,13 +13,10 @@ const CardSection = ({children, title}) => {
     const isDarkMode = useColorScheme() === 'dark';
     return (
       <View style={{
-        backgroundColor: isDarkMode ? "#2b2b2b" : "#f7f5f5",
+        backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 1)',
         marginTop: 12,
         paddingHorizontal: 24,
         paddingVertical: 16,
-        shadowColor: 'black',
-        shadowOffset: {width: -2, height: 3 },
-        shadowOpacity: 0.3,
         borderRadius: 10,
         flexDirection: 'row',
         alignItems: 'center',

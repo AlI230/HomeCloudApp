@@ -54,10 +54,25 @@
 
  const FriendsPage = ({navigation}) => {
    const isDarkMode = useColorScheme() === 'dark';
- 
-   const backgroundStyle = {
-     backgroundColor: isDarkMode ? "#2b2b2b" : "#f7f5f5",
-   };
+
+   const NavigationDrawerStructureRight = (props) => {
+    const isDarkMode = useColorScheme() === 'dark';
+  
+    return (
+      <TouchableOpacity style={{ paddingRight: 10, flexDirection: 'row', backgroundColor: isDarkMode ? "#2b2b2b" : "#f7f5f5"}}>
+        <Feather name="user-plus" size={24} color={isDarkMode ? "white" : "black"} />
+      </TouchableOpacity>
+    );
+  };
+  
+  
+  React.useLayoutEffect(() => {
+      navigation.setOptions({
+          headerRight: () => (
+              <NavigationDrawerStructureRight navigationProps={navigation} />
+          ),
+      });
+  }, [navigation]);
  
    const renderItem = ({ item }) => (
     <TouchableOpacity>

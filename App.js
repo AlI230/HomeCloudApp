@@ -33,7 +33,7 @@ const App = () => {
                 activeTintColor: '#fff', /* font color for active screen label */
                 activeBackgroundColor: '#6495ED', /* bg color for active screen */
                 inactiveTintColor: isDarkMode ? "white" : "black",
-                inactiveBackgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 0.8)'
+                inactiveBackgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 1)'
               }}
               drawerContent={(props) => {
               const filteredProps = {

@@ -18,7 +18,7 @@ function CustomSidebarMenu(props, navigation) {
       <View style={{
         alignItems: 'center',
         flexDirection: 'row',
-        backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 0.8)',
+        backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 1)',
         padding: 16,
         marginHorizontal: 10,
         justifyContent: 'space-between',

@@ -133,15 +133,12 @@ const ChatPage = ({ route, navigation }) => {
         <>
         {item.sender === user.id ? (
             <View style={{
-                backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 0.8)',
+                backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 1)',
                 borderRadius: 10,
                 alignSelf: 'flex-start',
                 paddingHorizontal: 15,
                 paddingVertical: 8,
                 marginTop: 8,
-                shadowColor: 'black',
-                shadowOffset: {width: -2, height: 3 },
-                shadowOpacity: 0.3,
             }}>
                 <Text style={{color: isDarkMode ? 'white' : 'black', fontSize: 16}}>{item.text}</Text>
             </View>
@@ -153,9 +150,6 @@ const ChatPage = ({ route, navigation }) => {
                 paddingHorizontal: 15,
                 paddingVertical: 8,
                 marginTop: 8,
-                shadowColor: 'black',
-                shadowOffset: {width: -2, height: 3 },
-                shadowOpacity: 0.3,
             }}>
                 <Text style={{color: isDarkMode ? 'white' : 'black', fontSize: 16}}>{item.text}</Text>
             </View>
@@ -175,7 +169,7 @@ const ChatPage = ({ route, navigation }) => {
             <View style={{height: 60, padding: 10, width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                 <TextInput
                     style={{
-                        backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 0.8)',
+                        backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 1)',
                         padding: 10,
                         borderRadius: 10,
                         width: "80%",

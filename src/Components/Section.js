@@ -15,14 +15,11 @@ const Section = ({title, type}) => {
       <View style={{
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: isDarkMode ? "#2b2b2b" : "#f7f5f5",
+        backgroundColor: isDarkMode ? 'rgba(234, 234, 234, 0.05)' : 'rgba(234, 234, 234, 1)',
         marginTop: 12,
         paddingHorizontal: 24,
         paddingVertical: 24,
-        shadowColor: 'black',
-        shadowOffset: {width: -2, height: 3 },
-        shadowOpacity: 0.3,
-        borderRadius: 10,
+        borderRadius: 10
       }}>
         <Feather name={type} size={24} style={{marginRight: 10, color: isDarkMode ? 'white': 'black'}} />
         <Text
